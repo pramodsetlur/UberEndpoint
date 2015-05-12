@@ -1,0 +1,60 @@
+body { background: #990100; color: #FFCC00; font-size: 22px; }
+
+#heading { font-size: 70px; text-align: center; }
+
+a { text-decoration: none; color: #cccccc; }
+
+h3 { color:#cccccc }
+
+#heading a { text-decoration: none; color: #FFCC00; }
+
+a:hover, a:focus {
+	color: #cccccc;
+	text-decoration:none
+}
+
+#heading a:hover, a:focus {
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+#form { position: relative;  padding-top: 30px}
+
+#links { position: relative; padding-top: 30px; text-align: center; font-weight: bold; }
+
+#amt_message {position: absolute; font-size: 20px; color: white;}
+#cb_message {position: absolute; font-size: 20px; color: white;}
+#message {position: relative; font-size: 20px; color: white;}
+
+#del-text-box {position:relative; padding-left: 10px; padding-top: 2px; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #b8b8b8; box-shadow: inset -1px 1px 2px 0px #cacaca; height: 45px; width: 120px; font-size: 24px; font-family: sans-serif; color: #606060; }
+
+#shr { font-size: 25px; }
+
+#add-message { position:relative; font-size:25px ; color: white;}
+#del-message { position:relative; font-size:25px ; color: white;}
+
+#submit { box-shadow: inset 0px -49px 30px -1px #777777; border: 1px solid #383838; border-radius: 3px; color: white; width: 153px; height: 41px; font-size: 13px; }
+
+#delete-submit { position: relative; box-shadow: inset 0px -49px 30px -1px #777777; border: 1px solid #383838; border-radius: 3px; color: white; width: 153px; height: 41px; font-size: 13px; }
+
+#status { position: relative; padding: 40px; padding-top: 100px; font-size: 35px }
+
+#table { position: relative;} 
+
+table { position: relative; text-align: center; width: 80%; font-size:30px; margin-left: auto; margin-right: auto;}
+
+#table-scroll { position: relative; padding: 40px; text-align: center; height: 50%; overflow-y: scroll; } 
+
+#delete-form { position:relative; padding-left: 90px; padding-top:20px }
+ 
+#footer { position: absolute; bottom: 2%; text-align: center; width: 100%; font-size: 17px; color: white; }
+
+#footer a { text-decoration: underline; color:white; font-size: 17px }
+
+body { margin:0; padding:0; height:100%; width: auto; overflow-x: hidden;}
+
+#wrapper { min-height:100%; position:relative; }
+
+#content { padding:10px; padding-bottom:30px; }
+
+#profile { padding-top: 40px }

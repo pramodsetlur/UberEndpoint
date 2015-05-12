@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="/static/transaction/styles.css">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SplitCash!</title>
+	</head>
+	<body>
+		<div class="container-fluid" id="wrapper">
+		<div id="header">
+			<div id="heading"><a href="/">SplitCash!</a></div>
+		</div>
+		<div id="content">
+			<h3>Registration</h3>
+			<form method="post" role="form">
+				{% csrf_token %}	
+			  <div class="form-group">
+                            <label for="Name">Name</label>
+			    <input type="text" value="{{name}}" class="form-control" id="Name" name="Name" placeholder="Enter name">
+                          </div>
+			  <div class="form-group">
+			    <label for="Email">Email</label>
+			    <input type="email" value="{{email}}" class="form-control" id="Email" name="Email" placeholder="Enter email">
+		    	  </div>
+			  <div class="form-group">
+                            <label for="Phone">Phone Number (for SMS updates)</label>
+                            <input type="text" value="{{phone}}" class="form-control" id="Phone" name="Phone" placeholder="Enter mobile number">
+                    	  </div>
+			  <div class="form-group">
+			    <label for="Password1">Password</label>
+			    <input type="password" class="form-control" id="Password1" name="Password1" placeholder="Password">
+			  </div>
+			  <div class="form-group">
+			    <label for="Password2">Repeat Password</label>
+			    <input type="password" class="form-control" id="Password2" name="Password2" placeholder="Repeat Password">
+		    	  </div>
+		    	  {% if mismatch %}
+				<div id="message">Password mismatch. Please ensure that the 2 password fields are matching.</div>
+			  {% endif %}
+			  {% if empty_password %}
+                                <div id="message">Password cannot be empty.</div>
+                          {% endif %}
+			  <button type="submit" class="btn btn-default">Submit</button>
+		       </form>
+			<h4><a href="/">Go back to login</a></h4>
+					</div>
+		<div id="footer">Created by <a target="_blank" href="http://www-scf.usc.edu/~shantanb/">Shantanu Bal</a> - Powered by Django®</div>
+		</div>
+	</body>
+</html>

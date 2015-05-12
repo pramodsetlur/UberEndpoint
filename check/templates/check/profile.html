@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<script src="/static/transaction/script.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/transaction/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SplitCash!</title>
+	</head>
+	<body>
+		<div class="container-fluid" id="wrapper">
+                <div id="header">
+			<div id="heading"><a href="/">SplitCash!</a></div>
+                        <div id="links">
+                                <a id="l1" href="/check/">STATUS</a>&nbsp;&nbsp;&nbsp;
+                                <a id="l2" href="/check/profile/">PROFILE</a>&nbsp;&nbsp;&nbsp;
+                                <a id="l3" href="/transaction/add/">ADD</a>&nbsp;&nbsp;&nbsp;
+				<a id="l4" href="/transaction/delete/">VIEW/DELETE</a>&nbsp;&nbsp;&nbsp;
+	                        <a id="l5" href="/logout/">LOGOUT</a>
+			</div>
+		</div>
+		<div id="content">
+		    <div id="profile">
+			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Name:</div> <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">{{name}}</div>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Email:</div> <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">{{email}}</div>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Phone:</div> <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">{{phone}}</div>
+			<br><br>
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">Pending invitations:</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			{% if invite_userid %}
+				You have an invite from {{invite_name}}
+				<form method="post">
+					{% csrf_token %}
+					<input type="text" value="{{invite_userid}}" class="hidden" name="invite_id">
+					<input type="submit" id="submit" value="Accept">
+				</form>
+			{% else %}	
+				None
+			{% endif %}
+			</div>
+			<br><br>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">Invite your friend/roommate</div>
+			<br>
+			<div id="form" role="form">
+			<form method="get" name="addform">
+				{% csrf_token %}
+				<div id="">
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">Email:</div>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<input class="form-control" id="amt-text-box" type="email" name="email" required="required">
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div id="message"></div>
+					</div>	
+				</div>	
+				
+				
+				<div id="sbt" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<input type=submit id="submit" value="Submit!">
+				</div>
+			</form>
+			{% if invited %}
+			<div id="message" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">Your invite has been sent.</div>
+			{% endif %}
+			<br>
+			</div>
+		    </div>
+		</div>
+		
+		
+		<div id="footer" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Created by <a target="_blank" href="http://www-scf.usc.edu/~shantanb/">Shantanu Bal</a> - Powered by Django®</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="/static/transaction/styles.css">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SplitCash!</title>
+	</head>
+	<body>
+		<div class="container-fluid" id="wrapper">
+		<div id="header">
+			<div id="heading"><a href="/">SplitCash!</a></div>
+		</div>
+		<div id="content">
+			<div id="content">
+			<h3>Login</h3>
+			{% if reg %}
+				<div id="message">You have been successfully registered. Please login to continue.</div>
+			{% endif %}
+			{% if n_log %}
+                                <div id="message">Please login to continue.</div>
+                        {% endif %}
+			
+			<form method="post" role="form">
+			  {% csrf_token %}
+                          <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter email">
+                          </div>
+                          <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+		          </div>
+			  {% if inc %}
+                                <div id="message">Incorrect Email/Password.</div>
+                          {% endif %}
+                          <button type="submit" class="btn btn-default">Submit</button>                        </form>
+                	<h4> Not a member yet? <a href="/register">Register here.</a></h4>
+		</div>
+		</div>
+		<div id="footer">Created by <a target="_blank" href="http://www-scf.usc.edu/~shantanb/">Shantanu Bal</a> - Powered by Django®</div>
+		</div>
+	</body>
+</html>

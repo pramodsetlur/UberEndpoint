@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="/static/transaction/styles.css">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div id="wrapper">
+                <div id="header">
+                        <div id="heading">SplitCash!</div>
+                        <div id="links">
+                                <a id="l1" href="/check/">STATUS</a>&nbsp;&nbsp;&nbsp;
+                                <a id="l2" href="/check/profile/">PROFILE</a>&nbsp;&nbsp;&nbsp;
+                                <a id="l3" href="/transaction/add/">ADD</a>&nbsp;&nbsp;&nbsp;
+				<a id="l4" href="/transaction/delete/">VIEW/DELETE</a>&nbsp;&nbsp;&nbsp;
+				<a id="l5" href="/logout/">LOGOUT</a>
+			</div>
+		</div>
+		<div id="table-scroll">
+			<table border=1>
+				<tr style="font-weight: bold">
+					<td>ID</td><td>Name</td><td>Amount</td><td>Date</td>
+					<td>Jai</td><td>Pranshu</td><td>Shantanu</td><td>Suhas</td>
+					<td>Comment</td>
+				</tr>
+				{% for each in data %}
+				<tr>
+					{% for every in each %}
+						<td>{{every}}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<div id="footer">Created by <a target="_blank" href="http://www-scf.usc.edu/~shantanb/">Shantanu Bal</a> - Powered by Django®</div>
+		</div>
+	</body>
+</html>
