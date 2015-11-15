@@ -1,5 +1,6 @@
 # Django settings for splitcash project.
 import os
+from os import path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
